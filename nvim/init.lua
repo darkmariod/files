@@ -1,5 +1,5 @@
 -- ==========================================
--- ⚙️ Neovim Laravel + Oil + NeoTree (Nvim 0.11 compatible)
+-- ⚙️ Neovim Laravel + Oil + NeoTree + Lualine + Telescope
 -- ==========================================
 
 vim.g.mapleader = " "
@@ -95,6 +95,38 @@ require("lazy").setup({
     end,
   },
 
+  -- Telescope (buscador tipo VSCode)
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          layout_strategy = "vertical",
+          layout_config = { preview_cutoff = 20 },
+        },
+      })
+      vim.keymap.set("n", "<leader>p", ":Telescope find_files<CR>", { desc = "Buscar archivos" })
+      vim.keymap.set("n", "<leader>f", ":Telescope live_grep<CR>", { desc = "Buscar texto" })
+    end,
+  },
+
+  -- Barra inferior tipo VSCode
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("lualine").setup({
+        options = {
+          theme = "auto",
+          section_separators = "",
+          component_separators = "",
+          icons_enabled = true,
+        },
+      })
+    end,
+  },
+
   -- LSP + Autocompletado
   { "williamboman/mason.nvim", config = true },
   { "williamboman/mason-lspconfig.nvim" },
@@ -114,7 +146,6 @@ require("mason-lspconfig").setup({
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- ✅ Nueva forma moderna sin warnings
 vim.lsp.config("intelephense", {
   capabilities = capabilities,
   cmd = { "intelephense", "--stdio" },
@@ -153,4 +184,4 @@ vim.keymap.set("n", "<leader>sv", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>sh", ":split<CR>")
 vim.keymap.set("n", "<leader>sc", ":close<CR>")
 
-print("✅ Laravel.nvim + Oil + Neo-tree + Treesitter listos y sin errores 🚀")
+print("✅ Laravel.nvim + Oil + Neo-tree + Telescope + Lualine listos y sin errores 🚀")
