@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import CategoryIconLabel from "@/components/ui/CategoryIconLabel.astro";
+import bgImage from "@/assets/bg_home.jpg";
+---
+
+
+<Layout 
+    title="Inicio" 
+    subtitle="Disfruta una deliciosa taza de café"
+    bgImage={bgImage.src}
+>
+    <h2 class="text-coffee-400 text-center font-black text-lg uppercase after:coffee-icon">
+        Conoce más
+        <span class="block text-4xl text-coffee-900">Sobre nosotros</span>
+    </h2>
+
+    <p class="text-center text-lg mt-10">
+        Bienvenido a Monkey Kitchen, donde la comida fitness, vegana, vegetariana y tradicional ecuatoriana 
+        se transforma en experiencias frescas y gourmet. Trabajamos con ingredientes reales, técnicas modernas 
+        y un estilo limpio que respeta el sabor natural de cada plato.
+    </p>
+
+    <p class="text-center text-lg mt-10">
+        Aquí encontrarás desayunos energéticos, almuerzos balanceados, platos modernos, y además un servicio 
+        exclusivo de coctelería para eventos, con frutas tropicales, hierbas frescas y presentaciones de autor.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <CategoryIconLabel icon="icon_coffee.svg" text="Café" />
+        <CategoryIconLabel icon="icon_dessert.svg" text="Postres" />
+        <CategoryIconLabel icon="icon_tea.svg" text="Té" />
+    </div>
+
+</Layout>

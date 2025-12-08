@@ -1,0 +1,25 @@
+---
+import FooterBox from "./FooterBox.astro";
+---
+ 
+ <footer class="bg-coffee-900 pt-20">
+    <div class="max-w-7xl mx-auto mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <FooterBox heading="Ubicacion">
+            <p>Coffe Street 18</p>
+            <p>Ecuador Riobamba</p>
+        </FooterBox>
+        
+        <FooterBox heading="Reservación">
+            <p>Telf +593 969188</p>
+            <a href="+593 969188">Llamar</a>
+        </FooterBox>
+
+        <FooterBox heading="Horario">
+            <p>Lunes | Sábado 9am - 9pm </p>
+            <p>Domingo | Cerrado</p>
+        </FooterBox>
+    </div>
+    <p class="py-10 text-center text-white">
+        Todos los derechos reservados. La Cafetería. &copy; {new Date().getFullYear() }
+    </p>
+</footer>

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: "Space Mono", monospace;
+  --color-coffee-50:  #FBF7F0;
+  --color-coffee-100: #F1C99C;
+  --color-coffee-200: #E5BE92;
+  --color-coffee-300: #D9A87A;
+  --color-coffee-400: #C69A6D;
+  --color-coffee-500: #A68268; 
+  --color-coffee-600: #7C5734;
+  --color-coffee-700: #5E311E;
+  --color-coffee-800: #3A1A0E;
+  --color-coffee-900: #301000;
+  --color-coffee-950: #000000;
+
+  --icon-size: 6rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-coffee-50);
+}
+
+@utility coffee-icon {
+  content: "";
+  background-image: url("../assets/coffee.svg");
+  background-repeat: no-repeat;
+  background-size: var(--icon-size);
+  background-position: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: block;
+  margin-inline: auto;
+}
+
+@utility font-secondary {
+  font-family: "PT Sans", sans-serif;
+}

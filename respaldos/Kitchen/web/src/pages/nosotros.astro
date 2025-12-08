@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import bgImage from "../assets/bg_home.jpg";
+
+const url = 'http://localhost:8080/index.php?rest_route=/wp/v2/pages&slug=nosotros';
+const response = await fetch(url);
+const json = await response.json();
+---
+
+<Layout 
+  title="Nosotros"
+>
+  <h1>{json[0].title.rendered}</h1>
+</Layout>
