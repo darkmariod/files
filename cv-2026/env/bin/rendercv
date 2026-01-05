@@ -1,0 +1,7 @@
+#!/Users/mariopazmino/Documents/GitHub/files/cv-2026/env/bin/python3.12
+import sys
+from rendercv.cli.entry_point import entry_point
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(entry_point())
